@@ -6,4 +6,7 @@
     <string name="title_profile">Profile</string>
     <string name="btn_report">Report</string>
     <string name="btn_reward">Rewards</string>
+    <string name="def_name">OJDylan</string>
+    <string name="pic_description">Image of the user shows here</string>
+    <string name="user_status">Status</string>
 </resources>
