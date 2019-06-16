@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ReportingApplication</string>
+    <string name="greetings">Welcome OJDylan</string>
+    <string name="title_home">Home</string>
+    <string name="title_history">History</string>
+    <string name="title_profile">Profile</string>
+    <string name="btn_report">Report</string>
+    <string name="btn_reward">Rewards</string>
+</resources>

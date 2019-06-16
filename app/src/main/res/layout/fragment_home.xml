@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white">
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="130dp"
+        android:background="@drawable/rectangle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/greetings"
+        android:clipToPadding="false"
+        android:elevation="20dp" >
+
+        <Button
+            android:id="@+id/btn_report"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:drawableTop="@drawable/edit_64"
+            android:backgroundTint="@color/white"
+            android:text="@string/btn_report"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="45dp"
+            android:background="?selectableItemBackgroundBorderless"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_rewards"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:drawableTop="@drawable/crown_64"
+            android:backgroundTint="@color/white"
+            android:text="@string/btn_reward"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="45dp"
+            android:background="?selectableItemBackgroundBorderless"
+            style="?android:attr/borderlessButtonStyle" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/greetings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/greetings"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+</RelativeLayout>
