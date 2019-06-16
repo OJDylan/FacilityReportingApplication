@@ -5,6 +5,16 @@
     android:orientation="vertical"
     android:background="@color/off_white">
 
+    <TextView
+        android:id="@+id/greetings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/greetings"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
     <RelativeLayout
         android:layout_width="350dp"
         android:layout_height="130dp"
@@ -41,14 +51,4 @@
             android:background="?selectableItemBackgroundBorderless"
             style="?android:attr/borderlessButtonStyle" />
     </RelativeLayout>
-
-    <TextView
-        android:id="@+id/greetings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="@string/greetings"
-        android:textAlignment="center"
-        android:textSize="24sp" />
 </RelativeLayout>
