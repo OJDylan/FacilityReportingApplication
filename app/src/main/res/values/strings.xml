@@ -8,5 +8,11 @@
     <string name="btn_reward">Rewards</string>
     <string name="def_name">OJDylan</string>
     <string name="pic_description">Image of the user shows here</string>
+    <string name="logo_description">Logo shows here</string>
     <string name="user_status">Status</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register_prompt">Don\'t have an account?</string>
+    <string name="register">Register</string>
 </resources>
