@@ -1,12 +1,12 @@
 <resources>
+    <string name="placeholder">Placeholder</string>
     <string name="app_name">ReportingApplication</string>
-    <string name="greetings">Welcome OJDylan</string>
     <string name="title_home">Home</string>
     <string name="title_history">History</string>
     <string name="title_profile">Profile</string>
     <string name="btn_report">Report</string>
     <string name="btn_reward">Rewards</string>
-    <string name="def_name">OJDylan</string>
+    <string name="greetings">Greetings</string>
     <string name="pic_description">Image of the user shows here</string>
     <string name="logo_description">Logo shows here</string>
     <string name="user_status">Status</string>

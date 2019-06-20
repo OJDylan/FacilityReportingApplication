@@ -24,7 +24,7 @@
         android:background="@drawable/rectangle"
         android:layout_marginTop="20dp"
         android:clipToPadding="false"
-        android:elevation="20dp">
+        android:elevation="10dp">
 
         <TextView
             android:id="@+id/text_login"
@@ -85,6 +85,7 @@
         </RelativeLayout>
 
         <Button
+            android:id="@+id/btn_login"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container_inputs"
@@ -102,7 +103,7 @@
             android:text="@string/register_prompt"
             android:layout_below="@+id/login_container"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="40dp"/>
 
         <Button
             android:layout_width="100dp"

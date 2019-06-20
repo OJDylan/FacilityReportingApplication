@@ -2,18 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/off_white">
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/greetings"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/greetings"
         android:textAlignment="center"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true" />
 
     <RelativeLayout
         android:layout_width="350dp"
@@ -23,7 +23,7 @@
         android:layout_marginTop="15dp"
         android:layout_below="@+id/greetings"
         android:clipToPadding="false"
-        android:elevation="20dp" >
+        android:elevation="10dp" >
 
         <Button
             android:id="@+id/btn_report"
