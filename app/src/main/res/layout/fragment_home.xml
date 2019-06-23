@@ -16,7 +16,8 @@
         android:layout_centerHorizontal="true" />
 
     <RelativeLayout
-        android:layout_width="350dp"
+        android:id="@+id/container"
+        android:layout_width="360dp"
         android:layout_height="130dp"
         android:background="@drawable/rectangle"
         android:layout_centerHorizontal="true"
@@ -50,5 +51,24 @@
             android:layout_marginEnd="45dp"
             android:background="?selectableItemBackgroundBorderless"
             style="?android:attr/borderlessButtonStyle" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="390dp"
+        android:layout_height="530dp"
+        android:background="@drawable/rectangle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/container"
+        android:clipToPadding="false"
+        android:elevation="10dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:scrollbars="vertical" />
+
     </RelativeLayout>
 </RelativeLayout>

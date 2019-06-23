@@ -1,4 +1,4 @@
-package com.example.reportingapplication;
+package com.example.reportingapplication.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,10 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class HomeFragment extends Fragment {
+import com.example.reportingapplication.R;
+
+public class HistoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_history, container, false);
+
+        return view;
     }
 }

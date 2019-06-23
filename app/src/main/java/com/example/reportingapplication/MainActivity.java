@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
 
+import com.example.reportingapplication.Fragments.HistoryFragment;
+import com.example.reportingapplication.Fragments.HomeFragment;
+import com.example.reportingapplication.Fragments.ProfileFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
