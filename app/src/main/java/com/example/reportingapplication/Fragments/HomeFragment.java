@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.reportingapplication.NewsItem;
-import com.example.reportingapplication.NewsItemAdapter;
+import com.example.reportingapplication.NewsItem.NewsItem;
+import com.example.reportingapplication.NewsItem.NewsItemAdapter;
 import com.example.reportingapplication.R;
 
 import java.util.ArrayList;

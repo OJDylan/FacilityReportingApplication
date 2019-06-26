@@ -1,4 +1,4 @@
-package com.example.reportingapplication;
+package com.example.reportingapplication.NewsItem;
 
 public class NewsItem {
     private int mImageResource;
