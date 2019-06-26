@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    android:layout_marginBottom="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
+
+        <ImageView
+            android:id="@+id/history_icon"
+            android:layout_width="70dp"
+            android:layout_height="70sp"
+            android:padding="2dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/history_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/history_icon"
+            android:text="Date"
+            android:textAlignment="viewEnd"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/history_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/history_icon"
+            android:layout_below="@id/history_date"
+            android:outlineAmbientShadowColor="@android:color/black"
+            android:text="Title"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/history_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/history_title"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@+id/history_icon"
+            android:text="Subtitle"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

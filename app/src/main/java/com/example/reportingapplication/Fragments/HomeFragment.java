@@ -36,9 +36,6 @@ public class HomeFragment extends Fragment {
         newsList.add(new NewsItem(R.drawable.ic_history_black_24dp, "Line 1", "Line 2"));
         newsList.add(new NewsItem(R.drawable.ic_home_black_24dp, "Line 3", "Line 4"));
         newsList.add(new NewsItem(R.drawable.ic_person_black_24dp, "Line 5", "Line 6"));
-        newsList.add(new NewsItem(R.drawable.ic_history_black_24dp, "Line 1", "Line 2"));
-        newsList.add(new NewsItem(R.drawable.ic_home_black_24dp, "Line 3", "Line 4"));
-        newsList.add(new NewsItem(R.drawable.ic_person_black_24dp, "Line 5", "Line 6"));
 
         mRecyclerView = view.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
