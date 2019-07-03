@@ -1,5 +1,6 @@
 package com.example.reportingapplication.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,14 +10,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.reportingapplication.NewsItem.NewsItem;
 import com.example.reportingapplication.NewsItem.NewsItemAdapter;
 import com.example.reportingapplication.R;
+import com.example.reportingapplication.ReportActivity;
+import com.example.reportingapplication.RewardActivity;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment{
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -26,16 +30,13 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        //Populate RecycledView
         ArrayList<NewsItem> newsList = new ArrayList<>();
-        newsList.add(new NewsItem(R.drawable.ic_history_black_24dp, "Line 1", "Line 2"));
-        newsList.add(new NewsItem(R.drawable.ic_home_black_24dp, "Line 3", "Line 4"));
-        newsList.add(new NewsItem(R.drawable.ic_person_black_24dp, "Line 5", "Line 6"));
-        newsList.add(new NewsItem(R.drawable.ic_history_black_24dp, "Line 1", "Line 2"));
-        newsList.add(new NewsItem(R.drawable.ic_home_black_24dp, "Line 3", "Line 4"));
-        newsList.add(new NewsItem(R.drawable.ic_person_black_24dp, "Line 5", "Line 6"));
-        newsList.add(new NewsItem(R.drawable.ic_history_black_24dp, "Line 1", "Line 2"));
-        newsList.add(new NewsItem(R.drawable.ic_home_black_24dp, "Line 3", "Line 4"));
-        newsList.add(new NewsItem(R.drawable.ic_person_black_24dp, "Line 5", "Line 6"));
+        newsList.add(new NewsItem(R.drawable.ic_history_black_24dp, "Title", "Description"));
+        newsList.add(new NewsItem(R.drawable.ic_home_black_24dp, "Title", "Description"));
+        newsList.add(new NewsItem(R.drawable.ic_person_black_24dp, "Title", "Description"));
+        newsList.add(new NewsItem(R.drawable.ic_history_black_24dp, "Title", "Description"));
+        newsList.add(new NewsItem(R.drawable.ic_home_black_24dp, "Title", "Description"));
 
         mRecyclerView = view.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -44,6 +45,24 @@ public class HomeFragment extends Fragment {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+
+        //Reports button onClick listener
+        Button reportButton = view.findViewById(R.id.btn_report);
+        reportButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), ReportActivity.class));
+            }
+        });
+
+        //Rewards button onClick listener
+        Button rewardButton = view.findViewById(R.id.btn_rewards);
+        rewardButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), RewardActivity.class));
+            }
+        });
 
         return view;
     }

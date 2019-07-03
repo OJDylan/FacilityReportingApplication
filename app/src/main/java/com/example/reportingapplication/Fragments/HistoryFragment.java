@@ -29,19 +29,19 @@ public class HistoryFragment extends Fragment {
         ArrayList<HistoryItem> historyList = new ArrayList<>();
 
         historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Line 1", "Line 2", "12/05/19"));
+                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
         historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Line 1", "Line 2", "12/05/19"));
+                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
         historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Line 1", "Line 2", "12/05/19"));
+                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
         historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Line 1", "Line 2", "12/05/19"));
+                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
         historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Line 1", "Line 2", "12/05/19"));
+                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
         historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Line 1", "Line 2", "12/05/19"));
+                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
         historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Line 1", "Line 2", "12/05/19"));
+                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
 
         hRecyclerView = view.findViewById(R.id.history_recycler_view);
         hRecyclerView.setHasFixedSize(true);

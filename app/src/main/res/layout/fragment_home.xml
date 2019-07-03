@@ -30,7 +30,7 @@
             android:id="@+id/btn_report"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:drawableTop="@drawable/edit_64"
+            android:drawableTop="@drawable/ic_pencil_64dp"
             android:backgroundTint="@color/white"
             android:text="@string/btn_report"
             android:layout_centerInParent="true"
@@ -44,7 +44,7 @@
             android:id="@+id/btn_rewards"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:drawableTop="@drawable/crown_64"
+            android:drawableTop="@drawable/ic_crown_64dp"
             android:backgroundTint="@color/white"
             android:text="@string/btn_reward"
             android:layout_centerInParent="true"
@@ -70,6 +70,5 @@
             android:layout_height="match_parent"
             android:padding="4dp"
             android:scrollbars="vertical" />
-
     </RelativeLayout>
 </RelativeLayout>
