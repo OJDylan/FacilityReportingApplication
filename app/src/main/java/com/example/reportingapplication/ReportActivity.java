@@ -12,11 +12,15 @@ public class ReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
+        //get city suggestions
         String[] cities = getResources().getStringArray(R.array.cities);
 
         AutoCompleteTextView editText = findViewById(R.id.city_autocomplete);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1, cities);
         editText.setAdapter(adapter);
+
+        //add dialog box
+        //add database
     }
 }

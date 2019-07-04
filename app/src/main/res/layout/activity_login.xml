@@ -70,7 +70,8 @@
                 android:inputType="textPersonName"
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
-                tools:ignore="Autofill,LabelFor" />
+                tools:ignore="Autofill,LabelFor"
+                android:cursorVisible="false" />
 
             <EditText
                 android:id="@+id/editText_password"
@@ -81,7 +82,8 @@
                 android:inputType="textPassword"
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
-                tools:ignore="Autofill,LabelFor" />
+                tools:ignore="Autofill,LabelFor"
+                android:cursorVisible="false"/>
         </RelativeLayout>
 
         <Button
@@ -106,6 +108,7 @@
             android:layout_marginTop="40dp"/>
 
         <Button
+            android:id="@+id/btn_register"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/text_register"
