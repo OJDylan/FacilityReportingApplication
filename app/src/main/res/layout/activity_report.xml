@@ -112,18 +112,20 @@
             android:layout_marginTop="20dp">
 
             <TextView
-                android:id="@+id/reporting_state"
+                android:id="@+id/reporting_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/report_city"
                 android:textSize="20sp" />
 
-            <Spinner
-                android:layout_width="150dp"
+            <AutoCompleteTextView
+                android:id="@+id/city_autocomplete"
+                android:layout_width="325dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/reporting_state"
-                android:layout_marginTop="10dp">
-            </Spinner>
+                android:layout_below="@+id/reporting_city"
+                android:hint="Select a city"
+                android:completionThreshold="1"
+                android:completionHint="Select a city"/>
         </RelativeLayout>
 
         <RelativeLayout
