@@ -29,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         RegisterUser();
     }
 
+    //registers user credentials to database
     public void RegisterUser(){
         btnRegisterUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    //checks for empty input
     public boolean checkInput(String user, String pass){
         return (!TextUtils.isEmpty(user) && !TextUtils.isEmpty(pass));
     }

@@ -1,7 +1,9 @@
 package com.example.reportingapplication.Fragments;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,7 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import com.example.reportingapplication.DatabaseHelper;
+import com.example.reportingapplication.LoginActivity;
 import com.example.reportingapplication.NewsItem.NewsItem;
 import com.example.reportingapplication.NewsItem.NewsItemAdapter;
 import com.example.reportingapplication.R;
@@ -64,6 +70,22 @@ public class HomeFragment extends Fragment{
             }
         });
 
+        displayName(view);
+
         return view;
+    }
+
+    public void displayName(View view){
+        DatabaseHelper myDb = new DatabaseHelper(getActivity());
+        Cursor res = myDb.getName();
+        TextView text = view.findViewById(R.id.greetings);
+
+        //*PROBLEM*
+        //only gets first data and displays
+        if (res.moveToFirst()) {
+            //not getting input from other activity
+            String message = "Greetings " + res.getString(res.getColumnIndex("USERNAME"));
+            text.setText(message);
+        }
     }
 }

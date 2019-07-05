@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //checks for empty input
     public boolean checkInput(String user, String pass){
         return (!TextUtils.isEmpty(user) && !TextUtils.isEmpty(pass));
     }

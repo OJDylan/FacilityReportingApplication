@@ -31,6 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //adds data to database
     public boolean addData (String username, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -45,6 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    //checks if user exists in database
     public boolean checkUser(String username, String password){
         SQLiteDatabase db = getReadableDatabase();
         String[] columns = { COL1 };
@@ -57,5 +59,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
 
         return (count > 0);
+    }
+
+    public Cursor getName(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT USERNAME FROM " + TABLE_NAME, null);
+        return res;
     }
 }
