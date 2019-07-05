@@ -67,6 +67,7 @@
             android:layout_marginTop="20dp"/>
 
         <EditText
+            android:id="@+id/register_cpassword"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -74,6 +75,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/register_user"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/register"
