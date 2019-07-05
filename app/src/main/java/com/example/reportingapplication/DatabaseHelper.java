@@ -2,12 +2,13 @@ package com.example.reportingapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "User";
+    private static final String DATABASE_NAME = "User.db";
     private static final String TABLE_NAME = "user_data";
     private static final String COL1 = "ID";
     private static final String COL2 = "USERNAME";
@@ -42,5 +43,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else {
             return true;
         }
+    }
+
+    public boolean checkUser(String username, String password){
+        SQLiteDatabase db = getReadableDatabase();
+        String[] columns = { COL1 };
+        String[] selectionArgs = { username, password };
+        String selection = COL2 + "=?" + " AND " + COL3 + "=?";
+        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs,
+                null,null,null,null);
+        int count = cursor.getCount();
+        cursor.close();
+        db.close();
+
+        return (count > 0);
     }
 }
