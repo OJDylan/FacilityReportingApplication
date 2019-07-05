@@ -10,7 +10,7 @@
         android:contentDescription="@string/logo_description"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:src="@drawable/logo2"
+        android:src="@drawable/logo"
         android:paddingStart="60dp"
         android:paddingEnd="60dp"
         android:layout_centerHorizontal="true" />
@@ -22,6 +22,7 @@
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
         android:background="@drawable/rectangle"
+        android:backgroundTint="@color/colorBg"
         android:layout_marginTop="20dp"
         android:clipToPadding="false"
         android:elevation="10dp">

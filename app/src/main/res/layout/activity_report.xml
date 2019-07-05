@@ -123,7 +123,7 @@
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/reporting_city"
-                android:hint="Select a city"
+                android:hint="Enter a city"
                 android:completionThreshold="1" />
         </RelativeLayout>
 

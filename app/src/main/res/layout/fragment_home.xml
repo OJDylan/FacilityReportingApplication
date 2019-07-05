@@ -20,6 +20,7 @@
         android:layout_width="360dp"
         android:layout_height="105dp"
         android:background="@drawable/rectangle"
+        android:backgroundTint="@color/colorBg"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:layout_below="@+id/greetings"
