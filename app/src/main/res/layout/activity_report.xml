@@ -36,6 +36,7 @@
                 android:textSize="20sp" />
 
             <RadioGroup
+                android:id="@+id/radio_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/reporting_category"
@@ -48,7 +49,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/radio_traffic_selector"
                     android:button="@null"
-                    android:layout_margin="20dp"/>
+                    android:layout_margin="20dp"
+                    android:onClick="showDialog"/>
 
                 <RadioButton
                     android:id="@+id/radio_road"
@@ -57,7 +59,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/radio_roads_selector"
                     android:button="@null"
-                    android:layout_margin="20dp"/>
+                    android:layout_margin="20dp"
+                    android:onClick="showDialog"/>
 
                 <RadioButton
                     android:id="@+id/radio_signs"
@@ -66,7 +69,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/radio_signs_selector"
                     android:button="@null"
-                    android:layout_margin="20dp"/>
+                    android:layout_margin="20dp"
+                    android:onClick="showDialog"/>
             </RadioGroup>
         </RelativeLayout>
 
@@ -143,6 +147,7 @@
                 android:textSize="20sp"/>
 
             <TextView
+                android:id="@+id/report_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/report_description"

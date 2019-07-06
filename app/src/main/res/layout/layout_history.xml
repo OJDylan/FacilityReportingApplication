@@ -55,6 +55,5 @@
             android:layout_toEndOf="@+id/history_icon"
             android:text="Subtitle"
             android:textSize="15sp" />
-
     </RelativeLayout>
 </android.support.v7.widget.CardView>
