@@ -33,7 +33,7 @@ public class ReportDialog extends AppCompatDialogFragment {
 
                     }
                 })
-                .setPositiveButton("Report", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Done", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         int radioId = rg.getCheckedRadioButtonId();
