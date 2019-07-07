@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,7 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
     private Button btnReport;
     private static String desc;
     private AutoCompleteTextView rCity;
+    private EditText rLocation;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
         rDetails = findViewById(R.id.report_details);
         btnReport = findViewById(R.id.add_report);
         rCity = findViewById(R.id.city_autocomplete);
+        rLocation = findViewById(R.id.editText_location);
 
         //get city suggestions
         String[] cities = getResources().getStringArray(R.array.cities);
@@ -50,11 +53,11 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
             public void onClick(View v) {
                 if(!rDetails.getText().toString().matches("none")){
                     if(traffic.isChecked()){
-                        AddData("Traffic", desc, getCityName());
+                        AddData("Traffic", desc, getLocation(), getCityName());
                     } else if (road.isChecked()){
-                        AddData("Roads", desc, getCityName());
+                        AddData("Roads", desc, getLocation(), getCityName());
                     } else if (sign.isChecked()){
-                        AddData("Signs", desc, getCityName());
+                        AddData("Signs", desc, getLocation(), getCityName());
                     }
                 } else {
                     Toast.makeText(ReportActivity.this, "Report description must not be empty",
@@ -65,8 +68,8 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
     }
 
     //adds data to reports database
-    public void AddData (String title, String description, String city){
-        boolean insertData = rDb.addReport(title, description, city);
+    public void AddData (String title, String description, String loc, String city){
+        boolean insertData = rDb.addReport(title, description, loc, city);
         if(insertData){
             Toast.makeText(this, "Report successfully made", Toast.LENGTH_SHORT).show();
         } else {
@@ -97,5 +100,9 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
     //gets city name
     public String getCityName(){
         return rCity.getText().toString();
+    }
+
+    public String getLocation(){
+        return rLocation.getText().toString();
     }
 }

@@ -147,6 +147,7 @@
                 android:textSize="20sp"/>
 
             <EditText
+                android:id="@+id/editText_location"
                 android:layout_width="325dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/report_location"
