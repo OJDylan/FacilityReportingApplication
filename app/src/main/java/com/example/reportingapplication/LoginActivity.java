@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.reportingapplication.Database.DatabaseHelper;
+
 public class LoginActivity extends AppCompatActivity {
     Button login, register;
     EditText mUsername, mPassword;
