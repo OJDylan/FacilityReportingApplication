@@ -1,9 +1,10 @@
-package com.example.reportingapplication;
+package com.example.reportingapplication.ReportDialogs;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDialogFragment;
 import android.view.LayoutInflater;
@@ -11,17 +12,20 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-public class ReportDialog extends AppCompatDialogFragment {
+import com.example.reportingapplication.R;
+
+public class ReportDialogRoad extends AppCompatDialogFragment {
     private RadioButton rb;
     private RadioGroup rg;
-    private ReportDialogListener listener;
+    private ReportDialogRoad.ReportDialogListener listener;
 
     @Override
+    @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
-        final View view = inflater.inflate(R.layout.layout_dialog, null);
+        final View view = inflater.inflate(R.layout.layout_dialog_roads, null);
 
         rg = view.findViewById(R.id.report_option_rg);
 
@@ -48,16 +52,15 @@ public class ReportDialog extends AppCompatDialogFragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-
         try {
-            listener = (ReportDialogListener) context;
+            listener = (ReportDialogRoad.ReportDialogListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() +
                     "Must implement ReportDialogListener");
         }
     }
 
-    public interface ReportDialogListener{
+    public interface ReportDialogListener {
         void applyTexts(String description);
     }
 }

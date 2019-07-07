@@ -6,14 +6,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ReportActivity extends AppCompatActivity implements ReportDialog.ReportDialogListener {
+import com.example.reportingapplication.ReportDialogs.ReportDialog;
+import com.example.reportingapplication.ReportDialogs.ReportDialogRoad;
+import com.example.reportingapplication.ReportDialogs.ReportDialogSign;
+
+public class ReportActivity extends AppCompatActivity implements ReportDialog.ReportDialogListener,
+        ReportDialogRoad.ReportDialogListener, ReportDialogSign.ReportDialogListener {
     private RadioButton traffic, road, sign;
     private TextView rDetails;
+    private Button btnReport;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,8 +38,7 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
         road = findViewById(R.id.radio_road);
         sign = findViewById(R.id.radio_signs);
         rDetails = findViewById(R.id.report_details);
-
-        //add database
+        btnReport = findViewById(R.id.add_report);
     }
 
     //radio button onClick
@@ -42,9 +47,11 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
             ReportDialog reportDialog = new ReportDialog();
             reportDialog.show(getSupportFragmentManager(), "report dialog");
         } else if (road.isChecked()){
-            Toast.makeText(this, "Road Selected", Toast.LENGTH_SHORT).show();
+            ReportDialogRoad rdRoad = new ReportDialogRoad();
+            rdRoad.show(getSupportFragmentManager(), "report dialog");
         } else {
-            Toast.makeText(this, "Signs Selected", Toast.LENGTH_SHORT).show();
+            ReportDialogSign rdSign = new ReportDialogSign();
+            rdSign.show(getSupportFragmentManager(), "report dialog");
         }
     }
 
