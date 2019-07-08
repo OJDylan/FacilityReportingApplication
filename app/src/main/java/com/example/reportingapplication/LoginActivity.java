@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.reportingapplication.Database.DatabaseHelper;
 
 public class LoginActivity extends AppCompatActivity {
+    public static final String EXTRA_TEXT = "com.example.reportingapplication.exameple.EXTRA_TEXT";
     Button login, register;
     EditText mUsername, mPassword;
     DatabaseHelper myDb;
@@ -36,7 +37,9 @@ public class LoginActivity extends AppCompatActivity {
                 if (checkInput(user, pass)) {
                     boolean res = myDb.checkUser(user, pass);
                     if (res) {
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.putExtra(EXTRA_TEXT, user);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(LoginActivity.this,
                                 "Incorrect username or password", Toast.LENGTH_SHORT).show();

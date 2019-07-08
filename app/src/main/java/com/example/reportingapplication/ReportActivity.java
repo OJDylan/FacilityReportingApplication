@@ -1,5 +1,6 @@
 package com.example.reportingapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reportingapplication.Database.DatabaseHelper;
+import com.example.reportingapplication.Fragments.HomeFragment;
 import com.example.reportingapplication.ReportDialogs.ReportDialog;
 import com.example.reportingapplication.ReportDialogs.ReportDialogRoad;
 import com.example.reportingapplication.ReportDialogs.ReportDialogSign;
@@ -63,6 +65,7 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
                     Toast.makeText(ReportActivity.this, "Report description must not be empty",
                             Toast.LENGTH_SHORT).show();
                 }
+                startActivity(new Intent(ReportActivity.this, MainActivity.class));
             }
         });
     }

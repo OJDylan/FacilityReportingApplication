@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.reportingapplication.Database.DatabaseHelper;
+import com.example.reportingapplication.LoginActivity;
 import com.example.reportingapplication.NewsItem.NewsItem;
 import com.example.reportingapplication.NewsItem.NewsItemAdapter;
 import com.example.reportingapplication.R;
@@ -32,6 +33,14 @@ public class HomeFragment extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        //set greeting message
+        Intent intent = getActivity().getIntent();
+        String name = intent.getStringExtra(LoginActivity.EXTRA_TEXT);
+        String message = "Greetings " + name;
+
+        TextView text = view.findViewById(R.id.greetings);
+        text.setText(message);
 
         //Populate RecycledView
         ArrayList<NewsItem> newsList = new ArrayList<>();
@@ -67,22 +76,6 @@ public class HomeFragment extends Fragment{
             }
         });
 
-        displayName(view);
-
         return view;
-    }
-
-    public void displayName(View view){
-        DatabaseHelper myDb = new DatabaseHelper(getActivity());
-        Cursor res = myDb.getName();
-        TextView text = view.findViewById(R.id.greetings);
-
-        //*PROBLEM*
-        //only gets first data and displays
-        if (res.moveToFirst()) {
-            //not getting input from other activity
-            String message = "Greetings " + res.getString(res.getColumnIndex("USERNAME"));
-            text.setText(message);
-        }
     }
 }
