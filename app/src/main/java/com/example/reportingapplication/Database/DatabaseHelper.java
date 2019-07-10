@@ -65,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //checks if user exists in database
     public boolean checkUser(String username, String password){
-        SQLiteDatabase db = getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         String[] columns = { COL1_USER };
         String[] selectionArgs = { username, password };
         String selection = COL2_USER + "=?" + " AND " + COL3_USER + "=?";
@@ -75,13 +75,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
 
+        //return true when there is more than 0 data within database
         return (count > 0);
     }
 
-    public Cursor getName(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT USERNAME FROM " + TABLE_NAME_USER, null);
-        return res;
+    public boolean checkEmpty(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT COUNT (*) FROM " + TABLE_NAME_REPORT;
+        Cursor cursor = db.rawQuery(query,null);
+        cursor.moveToFirst();
+        int count = cursor.getInt(0);
+
+        cursor.close();
+        db.close();
+        return (count > 0);
     }
 
     public boolean addReport(String title, String desc, String loc, String city){
@@ -98,5 +105,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } else {
             return true;
         }
+    }
+
+    public Cursor getData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_REPORT;
+        Cursor data = db.rawQuery(query, null);
+
+        return data;
     }
 }

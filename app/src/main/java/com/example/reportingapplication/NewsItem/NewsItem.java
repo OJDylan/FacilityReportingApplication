@@ -3,12 +3,12 @@ package com.example.reportingapplication.NewsItem;
 public class NewsItem {
     private int mImageResource;
     private String mTitle;
-    private String mSubtitle;
+    private String mDescription;
 
-    public NewsItem(int imageResource, String title, String subtitle){
+    public NewsItem(int imageResource, String title, String desc){
         mImageResource = imageResource;
         mTitle = title;
-        mSubtitle = subtitle;
+        mDescription = desc;
     }
 
     public int getImageResource(){
@@ -20,6 +20,6 @@ public class NewsItem {
     }
 
     public String getSubtitle(){
-        return mSubtitle;
+        return mDescription;
     }
 }

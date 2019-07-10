@@ -56,12 +56,23 @@
             style="?android:attr/borderlessButtonStyle" />
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/btn_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container"
+        android:text="@string/refresh_list"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@drawable/rectangle"
+        android:layout_marginTop="10dp"/>
+
     <RelativeLayout
         android:layout_width="390dp"
         android:layout_height="530dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/container"
+        android:layout_below="@+id/btn_refresh"
         android:clipToPadding="false"
         android:elevation="10dp">
 

@@ -25,4 +25,5 @@
         <item>Klang</item>
         <item>Petaling Jaya</item>
     </string-array>
+    <string name="refresh_list">Refresh</string>
 </resources>

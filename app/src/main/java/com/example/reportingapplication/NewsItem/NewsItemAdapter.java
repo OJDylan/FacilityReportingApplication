@@ -18,13 +18,13 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemAdapter.NewsVi
     public static class NewsViewHolder extends RecyclerView.ViewHolder {
         public ImageView mIcon;
         public TextView mTitle;
-        public TextView mSubtitle;
+        public TextView mDescription;
 
         public NewsViewHolder(@NonNull View itemView) {
             super(itemView);
             mIcon = itemView.findViewById(R.id.icon);
             mTitle = itemView.findViewById(R.id.title);
-            mSubtitle = itemView.findViewById(R.id.subtitle);
+            mDescription = itemView.findViewById(R.id.subtitle);
         }
     }
 
@@ -47,7 +47,7 @@ public class NewsItemAdapter extends RecyclerView.Adapter<NewsItemAdapter.NewsVi
 
         holder.mIcon.setImageResource(currentItem.getImageResource());
         holder.mTitle.setText(currentItem.getTitle());
-        holder.mSubtitle.setText(currentItem.getSubtitle());
+        holder.mDescription.setText(currentItem.getSubtitle());
     }
 
     @Override

@@ -34,14 +34,6 @@ public class HistoryFragment extends Fragment {
                 R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
         historyList.add(new HistoryItem(
                 R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
-        historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
-        historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
-        historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
-        historyList.add(new HistoryItem(
-                R.drawable.ic_history_black_24dp, "Title", "Description", "12/05/19"));
 
         hRecyclerView = view.findViewById(R.id.history_recycler_view);
         hRecyclerView.setHasFixedSize(true);

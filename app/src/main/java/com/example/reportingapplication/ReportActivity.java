@@ -39,9 +39,9 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
         road = findViewById(R.id.radio_road);
         sign = findViewById(R.id.radio_signs);
         rDetails = findViewById(R.id.report_details);
-        btnReport = findViewById(R.id.add_report);
         rCity = findViewById(R.id.city_autocomplete);
         rLocation = findViewById(R.id.editText_location);
+        btnReport = findViewById(R.id.add_report);
 
         //get city suggestions
         String[] cities = getResources().getStringArray(R.array.cities);
@@ -61,11 +61,11 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
                     } else if (sign.isChecked()){
                         AddData("Signs", desc, getLocation(), getCityName());
                     }
+                    finish();
                 } else {
                     Toast.makeText(ReportActivity.this, "Report description must not be empty",
                             Toast.LENGTH_SHORT).show();
                 }
-                startActivity(new Intent(ReportActivity.this, MainActivity.class));
             }
         });
     }
@@ -94,17 +94,19 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
         }
     }
 
+    //apply text from dialogBox to description
     @Override
     public void applyTexts(String description) {
         rDetails.setText(description);
         desc = description;
     }
 
-    //gets city name
+    //gets city name string
     public String getCityName(){
         return rCity.getText().toString();
     }
 
+    //gets location string
     public String getLocation(){
         return rLocation.getText().toString();
     }
