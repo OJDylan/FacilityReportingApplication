@@ -19,6 +19,9 @@ import com.example.reportingapplication.ReportDialogs.ReportDialog;
 import com.example.reportingapplication.ReportDialogs.ReportDialogRoad;
 import com.example.reportingapplication.ReportDialogs.ReportDialogSign;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+
 public class ReportActivity extends AppCompatActivity implements ReportDialog.ReportDialogListener,
         ReportDialogRoad.ReportDialogListener, ReportDialogSign.ReportDialogListener {
     DatabaseHelper rDb;
@@ -49,17 +52,21 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
                 this, android.R.layout.simple_list_item_1, cities);
         rCity.setAdapter(adapter);
 
+        //get system date
+        Calendar cal = Calendar.getInstance();
+        final String currentDate = DateFormat.getDateInstance().format(cal.getTime());
+
         //onClick listener that adds report data into database
         btnReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!rDetails.getText().toString().matches("none")){
                     if(traffic.isChecked()){
-                        AddData("Traffic", desc, getLocation(), getCityName());
+                        AddData("Traffic", desc, getLocation(), getCityName(), currentDate);
                     } else if (road.isChecked()){
-                        AddData("Roads", desc, getLocation(), getCityName());
+                        AddData("Roads", desc, getLocation(), getCityName(), currentDate);
                     } else if (sign.isChecked()){
-                        AddData("Signs", desc, getLocation(), getCityName());
+                        AddData("Signs", desc, getLocation(), getCityName(), currentDate);
                     }
                     finish();
                 } else {
@@ -71,8 +78,8 @@ public class ReportActivity extends AppCompatActivity implements ReportDialog.Re
     }
 
     //adds data to reports database
-    public void AddData (String title, String description, String loc, String city){
-        boolean insertData = rDb.addReport(title, description, loc, city);
+    public void AddData (String title, String description, String loc, String city, String date){
+        boolean insertData = rDb.addReport(title, description, loc, city, date);
         if(insertData){
             Toast.makeText(this, "Report successfully made", Toast.LENGTH_SHORT).show();
         } else {

@@ -18,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL3_REPORT = "DESCRIPTION";
     private static final String COL4_REPORT = "LOCATION";
     private static final String COL5_REPORT = "CITY";
+    private static final String COL6_DATE = "DATE";
 
     public static final String createTableUser = "CREATE TABLE " + TABLE_NAME_USER +
             "(USER_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -29,7 +30,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "TITLE TEXT, " +
             "DESCRIPTION TEXT, " +
             "LOCATION TEXT, " +
-            "CITY TEXT)";
+            "CITY TEXT, " +
+            "DATE TEXT)";
 
     public DatabaseHelper(Context context){
         super(context, DATABASE_NAME, null, 1);
@@ -91,13 +93,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return (count > 0);
     }
 
-    public boolean addReport(String title, String desc, String loc, String city){
+    public boolean addReport(String title, String desc, String loc, String city, String date){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL2_REPORT, title);
         contentValues.put(COL3_REPORT, desc);
         contentValues.put(COL4_REPORT, loc);
         contentValues.put(COL5_REPORT, city);
+        contentValues.put(COL6_DATE, date);
 
         long result = db.insert(TABLE_NAME_REPORT, null, contentValues);
         if(result == -1){
