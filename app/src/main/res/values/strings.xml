@@ -22,8 +22,8 @@
     <string name="report_location">Location</string>
     <string-array name="cities">
         <item>Shah Alam</item>
-        <item>Klang</item>
         <item>Petaling Jaya</item>
+        <item>Klang</item>
     </string-array>
     <string name="refresh_list">Refresh</string>
 </resources>

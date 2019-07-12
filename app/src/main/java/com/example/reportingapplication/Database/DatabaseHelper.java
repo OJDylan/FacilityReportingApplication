@@ -109,7 +109,34 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME_REPORT;
+        String query = "SELECT * FROM " + TABLE_NAME_REPORT + " ORDER BY REPORT_ID DESC";
+        Cursor data = db.rawQuery(query, null);
+
+        return data;
+    }
+
+    public Cursor getSAData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_REPORT +
+                " WHERE " + "CITY='Shah Alam'" + " ORDER BY REPORT_ID DESC";
+        Cursor data = db.rawQuery(query, null);
+
+        return data;
+    }
+
+    public Cursor getPJData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_REPORT +
+                " WHERE " + "CITY='Petaling Jaya'" + " ORDER BY REPORT_ID DESC";
+        Cursor data = db.rawQuery(query, null);
+
+        return data;
+    }
+
+    public Cursor getKData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME_REPORT +
+                " WHERE " + "CITY='Klang'" + " ORDER BY REPORT_ID DESC";
         Cursor data = db.rawQuery(query, null);
 
         return data;

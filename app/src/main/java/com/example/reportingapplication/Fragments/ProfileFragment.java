@@ -18,11 +18,9 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        String[] options = {"Option 1",
+        String[] options = {"Change name",
                             "Option 2",
-                            "Option 3",
-                            "Option 4",
-                            "Option 5"};
+                            "Option 3",};
 
         ListView list = view.findViewById(R.id.list_options);
 
