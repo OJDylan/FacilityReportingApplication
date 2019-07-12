@@ -41,7 +41,7 @@ public class HistoryFragment extends Fragment {
         if (res) {
             populateView();
         } else {
-            Toast.makeText(getActivity(), "There's no data to view", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "No reports were made", Toast.LENGTH_SHORT).show();
         }
         return view;
     }
@@ -51,19 +51,20 @@ public class HistoryFragment extends Fragment {
         while (data.moveToNext()){
             String title = data.getString(1);
             String desc = data.getString(2);
+            String city = data.getString(4);
             String date = data.getString(5);
             switch (title) {
                 case "Traffic":
                     historyList.add(new HistoryItem
-                            (R.drawable.ic_traffic_light_24dp, title, desc, date));
+                            (R.drawable.ic_traffic_light_24dp, title, desc, date, city));
                     break;
                 case "Roads":
                     historyList.add(new HistoryItem
-                            (R.drawable.ic_road_24dp, title, desc, date));
+                            (R.drawable.ic_road_24dp, title, desc, date, city));
                     break;
                 case "Signs":
                     historyList.add(new HistoryItem
-                            (R.drawable.ic_sign_24dp, title, desc, date));
+                            (R.drawable.ic_sign_24dp, title, desc, date, city));
                     break;
             }
             hAdapter = new HistoryItemAdapter(historyList);

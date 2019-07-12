@@ -20,6 +20,7 @@ public class HistoryItemAdapter extends RecyclerView.Adapter<HistoryItemAdapter.
         public TextView hTitle;
         public TextView hSubtitle;
         public TextView hDate;
+        public TextView hCity;
 
         public HistoryViewHolder(@NonNull View itemView){
             super(itemView);
@@ -27,6 +28,7 @@ public class HistoryItemAdapter extends RecyclerView.Adapter<HistoryItemAdapter.
             hTitle = itemView.findViewById(R.id.history_title);
             hSubtitle = itemView.findViewById(R.id.history_subtitle);
             hDate = itemView.findViewById(R.id.history_date);
+            hCity = itemView.findViewById(R.id.history_city);
         }
     }
 
@@ -51,6 +53,7 @@ public class HistoryItemAdapter extends RecyclerView.Adapter<HistoryItemAdapter.
         holder.hTitle.setText(currentItem.getTitle());
         holder.hSubtitle.setText(currentItem.getSubtitle());
         holder.hDate.setText(currentItem.getDate());
+        holder.hCity.setText(currentItem.getCity());
     }
 
     @Override
