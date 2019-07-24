@@ -29,6 +29,10 @@ public class RewardActivity extends AppCompatActivity {
 
         rewardList.add(new RewardItem
                 (R.drawable.starbuccs_reward, "RM10 Voucher", "100 Points"));
+        rewardList.add(new RewardItem
+                (R.drawable.starbuccs_reward_20, "RM20 Voucher", "200 Points"));
+        rewardList.add(new RewardItem
+                (R.drawable.starbuccs_reward_30, "RM30 Voucher", "300 Points"));
 
         rAdapter = new RewardItemAdapter(rewardList);
         rRecyclerView.setAdapter(rAdapter);

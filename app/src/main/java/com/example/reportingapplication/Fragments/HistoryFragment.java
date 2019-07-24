@@ -53,6 +53,7 @@ public class HistoryFragment extends Fragment {
             String desc = data.getString(2);
             String city = data.getString(4);
             String date = data.getString(5);
+            //switch statement to assign the right icons for different report titles
             switch (title) {
                 case "Traffic":
                     historyList.add(new HistoryItem

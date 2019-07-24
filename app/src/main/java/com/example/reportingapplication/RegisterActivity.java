@@ -38,16 +38,22 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
+                String cPass= cPassword.getText().toString();
                 if (checkInput(user, pass)){
-                    boolean isInserted = myDb.addData(username.getText().toString(),
-                            password.getText().toString());
-                    if(isInserted){
-                        Toast.makeText(RegisterActivity.this,
-                                "Successfully registered!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                    if(checkPass(pass, cPass)){
+                        boolean isInserted = myDb.addData(username.getText().toString(),
+                                password.getText().toString());
+                        if(isInserted){
+                            Toast.makeText(RegisterActivity.this,
+                                    "Successfully registered!", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                        } else {
+                            Toast.makeText(RegisterActivity.this,
+                                    "Something went wrong!", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
                         Toast.makeText(RegisterActivity.this,
-                                "Something went wrong!", Toast.LENGTH_SHORT).show();
+                                "Password does not match!", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     Toast.makeText(RegisterActivity.this,
@@ -60,5 +66,10 @@ public class RegisterActivity extends AppCompatActivity {
     //checks for empty input
     public boolean checkInput(String user, String pass){
         return (!TextUtils.isEmpty(user) && !TextUtils.isEmpty(pass));
+    }
+
+    //checks if password matches
+    public boolean checkPass(String pass1, String pass2){
+        return (pass1.equals(pass2));
     }
 }

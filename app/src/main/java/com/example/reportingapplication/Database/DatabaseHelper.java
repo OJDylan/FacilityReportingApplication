@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COL3_REPORT = "DESCRIPTION";
     private static final String COL4_REPORT = "LOCATION";
     private static final String COL5_REPORT = "CITY";
-    private static final String COL6_DATE = "DATE";
+    private static final String COL6_REPORT = "DATE";
 
     public static final String createTableUser = "CREATE TABLE " + TABLE_NAME_USER +
             "(USER_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -81,6 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return (count > 0);
     }
 
+    //checks if database is empty
     public boolean checkEmpty(){
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT COUNT (*) FROM " + TABLE_NAME_REPORT;
@@ -100,7 +101,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL3_REPORT, desc);
         contentValues.put(COL4_REPORT, loc);
         contentValues.put(COL5_REPORT, city);
-        contentValues.put(COL6_DATE, date);
+        contentValues.put(COL6_REPORT, date);
 
         long result = db.insert(TABLE_NAME_REPORT, null, contentValues);
         if(result == -1){
